@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name')->unique();
             $table->longText('description');
+            $table->longText('filename')->unique();
             $table->integer("score");
             $table->timestamps();
         });
