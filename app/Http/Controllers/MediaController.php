@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\MediaDirectory;
+use App\Models\Media;
 use Illuminate\Http\Request;
 
 class MediaController extends Controller
 {
-    // Show all media
-    public function index()
+    //Show all episodes
+    public function show(Media $media)
     {
-        return view("index", [
-            "medias" => MediaDirectory::latest()->get()
+        return view('medias.show', [
+            'media' => $media
         ]);
     }
 }

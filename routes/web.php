@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MediaDirectoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [MediaDirectoryController::class, 'index']);
 
-Route::get('/series/{media}', function () {
-    return view('index');
-});
+
+Route::get('/series/{media}', [MediaController::class, 'show']);

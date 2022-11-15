@@ -13,14 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('media_directory', function (Blueprint $table) {
+        Schema::create('media_directories', function (Blueprint $table) {
             $table->id();
             $table->string('name')->unique();
-            $table->string('tags');
-            $table->longText('description');
+            $table->string('tags')->default("");
+            $table->longText('description')->default("");
             $table->longText('folder_name')->unique();
-            $table->integer("score");
-            $table->integer("episodes");
+            $table->integer("score")->default(0);
+            $table->integer("episodes")->default(0);
             $table->timestamps();
         });
     }
@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('media_directory');
+        Schema::dropIfExists('media_directories');
     }
 };
