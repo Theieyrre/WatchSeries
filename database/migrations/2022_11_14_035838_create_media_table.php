@@ -16,6 +16,8 @@ return new class extends Migration
         Schema::create('media', function (Blueprint $table) {
             $table->id();
             $table->string('name')->unique();
+            $table->integer("episode_number");
+            $table->string('tags');
             $table->longText('description');
             $table->longText('filename')->unique();
             $table->integer("score");

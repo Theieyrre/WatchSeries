@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('media_directory', function (Blueprint $table) {
             $table->id();
             $table->string('name')->unique();
+            $table->string('tags');
             $table->longText('description');
             $table->longText('folder_name')->unique();
             $table->integer("score");
